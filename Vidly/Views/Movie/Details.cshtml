@@ -1,0 +1,25 @@
+﻿@model Vidly.Models.Movie
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<div>
+	<hr />
+
+    <ul class="list-group">
+        <li class="list-group-item"> Genre : @Model.Genre.Name </li>
+        <li class="list-group-item"> Release Date : @Model.ReleaseDate.ToLongDateString()</li>
+        <li class="list-group-item"> Number In Stock : @Model.NumberInStock </li>
+    </ul>
+
+
+
+</div>
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index")
+</p>
